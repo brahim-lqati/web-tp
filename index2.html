@@ -1,0 +1,152 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+ 
+    <title>users</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        #card{
+            border: 1px solid black;
+            width: 350px;
+            height: 470px;
+            background-image: url("back.jpg");
+           
+            
+            display: none;
+           
+        }
+        #card img{
+            border-radius: 50%;
+            margin: 5% 26%;
+        }
+        #card h2,h3,h5,h6{
+            text-align: center;
+        }
+        #card div{
+            
+            width: 200px;
+            padding: 10px;
+            margin: 30px auto;
+            text-align: center;
+            background: red;
+            
+        }
+        #out #card{
+            float: left;
+            margin-left: 10px;
+        }
+        body{
+            height: 1000px;
+        }
+        #btn-card{
+            padding: 10px;
+            width: 200px;
+            border: 2px solid rgb(123, 25, 156);
+            text-align: center;
+            margin-left: 20%;
+        }
+        #btn-card:hover{
+            background:  rgb(123, 25, 156);
+            color:white;
+            transition: all 0.5s;
+        }
+       
+    
+    </style>
+    
+</head>
+<body>
+
+        <div id="card">
+            <img width="150px" height="150px" src="">
+            <h2>software enginner</h2>
+            <h6>name</h6>
+            <h3></h3>
+            <h5></h5>
+            <div>ENSET MOHAMMEDIA</div>
+            <button id="btn-card" onclick="btn()">Modifier</button>
+
+        </div>
+        <div id="out">
+            <img src="" id="img">
+            <!-- <input type="file" id="inpt">
+            <button id="btn" onclick="tester()">click me</button>   -->
+     
+        </div>
+
+      
+        
+
+
+
+    <script>
+
+       
+      
+
+
+
+
+       var src;
+           function tester(){
+                src=document.getElementById("inpt").value;
+               
+               document.getElementById("img").setAttribute("src",src);
+           }
+            
+           
+             var users=[
+                 {
+                     profil :"profile1.jpg",
+                     name: "john riro",
+                 },
+                 {
+                    profil :"profile2.jpg",
+                     name: "yassmina toto",   
+                 },
+                 {
+                    profil :"profile3.jpg",
+                     name: "rayan bibo",
+                 }
+
+             ];
+
+             for(var i=0;i<3;i++){
+                 var cln=document.getElementById("card").cloneNode(true);
+                // var cln=itm.cloneNode(true);
+                 cln.querySelector("img").setAttribute("src",users[i].profil);
+                 cln.querySelector("h3").innerHTML=users[i].name;
+                 cln.setAttribute("style","display:block");
+                 document.getElementById("out").appendChild(cln);
+             }
+
+             
+            function btn(){
+                alert("cooco");
+            }
+
+
+           
+       
+      
+       
+    </script>
+
+     
+
+
+
+
+
+
+
+
+
+    
+</body>
+</html>
+
+
+
