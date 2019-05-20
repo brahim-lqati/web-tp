@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css">
+    <script src="main.js"></script>
+    <style>
+        tr,td{
+            border:2px solid red;
+            margin-left: 0;
+           
+
+         
+         }
+         table{
+             
+             border-collapse: collapse;
+         }
+        #out td {
+            height: 10px;
+            width: 10px;
+        }
+        #palette td{
+            
+            height: 50px;
+            
+        }
+        .peinture td{
+            border-radius: 50%;
+        }
+        .peinture tr{
+            border-color: white;
+        }
+        
+         /* table{
+             padding: 0;
+         } */
+         
+    </style>
+</head>
+<body>
+    <h1>Bonjour</h1>
+    Entrer ligne:  
+    <input id="row" type="text"><br><br>
+    Entrer colonne:
+    <input id="col"type="text"><br>
+    <input type="button" value="afficher" onclick="affiche()">
+      <div id="out">
+     
+
+      </div><br><br>
+       <div id="palette">
+           <table width=50% class="peinture">
+               <tr style="color :blanchedalmond">
+                   <td style="background: black" onclick="change(this)"></td>
+                   <td style="background: gold" onclick="change(this)"></td>
+                   <td style="background: blue" onclick="change(this)"></td>
+                   <td style="background: rgb(218, 91, 7)" onclick="change(this)"></td>
+                   <td style="background: rgba(11, 214, 112, 0.644)" onclick="change(this)"></td>
+                   <td style="background: rgb(197, 12, 74)" onclick="change(this)"></td>
+                   <td style="background: rgb(184, 25, 149)" onclick="change(this)"></td>
+                  
+               </tr>
+           </table>
+       </div>
+    
+
+      <script>
+       var color;
+        function maketable(ligne,colonne){
+            var i,j;
+            var tab="<table style=width:100%>";
+                for(i=0;i<ligne;i++){
+                    tab+="<tr>"
+                    for(j=0;j<colonne;j++){
+                        tab+="<td onmousemove='draw(this)'> </td>"
+                       
+                    }
+                    tab+="</tr>"
+                }
+                tab+="</table>"
+                
+                
+            return tab;
+                        
+        }
+        function affiche(){
+            var c=document.getElementById('col').value;
+            var l=document.getElementById("row").value;
+            document.getElementById("out").innerHTML=maketable(l,c);
+        }
+        function draw(td){
+
+            td.style.background=color;
+        }
+        function change(td){
+            color=td.style.background;
+        }
+        
+                    
+    
+                    
+        </script>
+    
+</body>
+</html>
